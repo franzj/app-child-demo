@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+{% block title %}Página de registro{% endblock %}
+{% block statics %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" charset="utf-8">
+<script src="{{ url_for('static', filename='js/jquery-2.2.4.min.js') }}" charset="utf-8"></script>
+<script src="{{ url_for('static', filename='js/register.js') }}" charset="utf-8"></script>
+{% endblock %}
+{% block content %}
+  <div id="content">
+    <nav>
+      <ul>
+        <li>Inicio</li>
+        <li>Inicio</li>
+        <li>Otro</li>
+        <li style="float: right;">Login</li>
+      </ul>
+    </nav>
+    <h1>Bienvenido a mi primer jueguito en HTML5</h1>
+    <h2>Completa tus datos</h2>
+    <form class="form" action="/register" method="POST">
+      <div class="fromgroup">
+        <label>Departamento y distrito</label>
+        <select name="departamento">
+        </select>
+        <select name="distrito">
+        </select>
+      </div>
+      <div class="fromgroup">
+        <div class="item">
+          <label>Sexo</label>
+          <div>
+            <input type="radio" name="sexo" value="femenino">
+            <input type="radio" name="sexo" value="masculino">
+          </div>
+        </div>
+        <div class="item">
+          <label>Fecha de nacimiento</label>
+          <div>
+            <input id="dateFecha" type="date" name="fecha" value="">
+          </div>
+        </div>
+        <div class="item">
+          <label>Mis colores favoritos</label>
+          <div>
+            <div class="checkbox">
+              <label>
+                <div class="color" style="background: red;">
+                </div>
+                <input type="checkbox" name="colores" value="rojo">
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <div class="color" style="background: green;">
+                </div>
+                <input type="checkbox" name="colores" value="verde">
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <div class="color" style="background: blue;">
+                </div>
+                <input type="checkbox" name="colores" value="azul">
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <div class="color" style="background: yellow;">
+                </div>
+                <input type="checkbox" name="colores" value="amarillo">
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="controls" class="fromgroup">
+        <input type="button" value="Atras">
+        <input type="submit" value="Finalizar y entrar al juego">
+      </div>
+    </form>
+  </div>
+{% endblock %}

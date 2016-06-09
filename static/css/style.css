@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+h2 {
+    color: blue;
+}
+
+input {
+    padding: 5px;
+}
+
+img {
+    border-radius: 5px;
+}
+
+nav {
+    display: inline-block;
+    width: 100%;
+    background: rgb(41, 77, 186);
+    margin: 0 0 16px 0;
+    box-shadow: 0px 2px 8px black;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    color: white;
+    cursor: pointer;
+    width: 80px;
+    display: inline-block;
+    float: left;
+    padding: 16px;
+    text-align: center;
+}
+
+nav li:hover{
+    background: rgb(2, 21, 136);
+}
+
+#content {
+    background: white;
+    margin: auto;
+    width: 1024px;
+    height: 100%;
+
+    border-top: none;
+    box-shadow: 0px 3px 8px 2px black;
+}
+
+#controls {
+    padding-left: 70%;
+}
+
+.form {
+    width: 100%;
+    display: inline-block;
+}
+
+.fromgroup {
+    display: inline-block;
+    padding: 16px 32px;
+    width: 100%;
+}
+
+.item {
+    display: block;
+    float: left;
+    margin-left: 13%;
+    text-align: center;
+}
+
+.item div{
+    margin-top: 8px;
+}
+
+.checkbox {
+    float: left;
+    margin: 8px;
+}
+
+.color {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid black;
+}

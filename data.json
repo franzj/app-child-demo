@@ -1,0 +1,49 @@
+{
+    "data" : {
+        "useradmin": [
+            {"username": "admin", "password": "secret"}
+        ],
+        "userchild": [
+            {"username": "juanito", "password": "perrito1.jpg"},
+            {"username": "gisela", "password": "munieca1.jpg"},
+            {"username": "marco", "password": "perrito2.jpg"},
+            {"username": "antonio", "password": "gatito3.jpg"},
+            {"username": "jorgito", "password": "perrito1.jpg"},
+            {"username": "elvis", "password": "perrito4.jpg"}
+        ],
+        "password": [
+            "gatitos",
+            "perritos",
+            "muñecas",
+            "peluches",
+            "juguetes"
+        ],
+        "imgs": [
+            {"img": "gatito1.jpg", "password_id": 1},
+            {"img": "gatito2.jpg", "password_id": 1},
+            {"img": "gatito3.jpg", "password_id": 1},
+            {"img": "gatito4.jpg", "password_id": 1},
+            {"img": "gatito5.jpg", "password_id": 1},
+            {"img": "perrito1.jpg", "password_id": 2},
+            {"img": "perrito2.jpg", "password_id": 2},
+            {"img": "perrito3.jpg", "password_id": 2},
+            {"img": "perrito4.jpg", "password_id": 2},
+            {"img": "perrito5.jpg", "password_id": 2},
+            {"img": "perrito6.jpg", "password_id": 2},
+            {"img": "munieca1.jpg", "password_id": 3},
+            {"img": "munieca2.jpg", "password_id": 3},
+            {"img": "munieca3.jpg", "password_id": 3},
+            {"img": "munieca4.jpg", "password_id": 3},
+            {"img": "peluche1.jpg", "password_id": 4},
+            {"img": "peluche2.jpg", "password_id": 4},
+            {"img": "peluche3.jpg", "password_id": 4},
+            {"img": "peluche4.jpg", "password_id": 4},
+            {"img": "peluche5.jpg", "password_id": 4},
+            {"img": "peluche6.jpg", "password_id": 4},
+            {"img": "juguete1.jpg", "password_id": 5},
+            {"img": "juguete2.jpg", "password_id": 5},
+            {"img": "juguete3.jpg", "password_id": 5},
+            {"img": "juguete4.jpg", "password_id": 5}
+        ]
+    }
+}

@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block title %}Página de registro{% endblock %}
+{% block statics %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" charset="utf-8">
+<script src="{{ url_for('static', filename='js/jquery-2.2.4.min.js') }}" charset="utf-8"></script>
+<script src="{{ url_for('static', filename='js/register.js') }}" charset="utf-8"></script>
+{% endblock %}
+{% block content %}
+  <div id="content">
+    <nav>
+      <ul>
+        <li>Inicio</li>
+        <li>Inicio</li>
+        <li>Otro</li>
+        <li style="float: right;">Login</li>
+      </ul>
+    </nav>
+    <h1>Bienvenido a mi primer jueguito en HTML5</h1>
+    <h2>Este es el formulario de registro para niños Apurimeños</h2>
+    <form class="form" action="/register" method="POST">
+      <div class="fromgroup">
+        <label>Digita tu nombre </label>
+        {{ form.csrf_token }}
+        <input id="txtUsername" type="text" name="username" value="" autocomplete="off">
+        <input id="btnVerificar" type="button" value="Ver Disponibilidad">
+      </div>
+      <div class="fromgroup">
+        <label>Escoge una contraseña </label>
+        <select id="ddlPasswords">
+        </select>
+      </div>
+      <div id="imgitems" class="fromgroup">
+      </div>
+      <div id="controls" class="fromgroup">
+        <input type="reset" value="Cancelar">
+        <input type="submit" value="Continuar">
+      </div>
+    </form>
+  </div>
+{% endblock %}
