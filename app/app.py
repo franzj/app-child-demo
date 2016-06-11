@@ -4,7 +4,6 @@ from flask import (Blueprint, render_template, abort, request,
 from flask.views import MethodView
 from sqlalchemy.orm.exc import NoResultFound
 
-from .forms import LoginChildForm
 from models import db, Child, Password
 
 child = Blueprint('child', __name__, template_folder='templates')
@@ -24,19 +23,34 @@ def index():
 
 @child.route('/register', methods=['GET', 'POST'])
 def register():
-    form = LoginChildForm()
-
     if request.method == 'POST':
-        if form.validate_on_submit():
-            username = form.username.data
-            password = form.password.data
+        username = request.form['username']
+        password = request.form['password']
+        
+        data = {'username': username, 'password': password}
+        
+        return render_template('child/continue.html', data=data)
 
-            db.session.add(Child(username, password))
-            db.session.commit()
+    return render_template('child/register.html')
 
-            return redirect(url_for('child.userchild', username=form.username.data))
 
-    return render_template('child/register.html', form=form)
+@child.route('/register/continue', methods=['POST'])
+def cuntinue_register():
+    username = request.form['username']
+    password = request.form['password']
+    departamento = request.form['departamento']
+    provincia = request.form['provincia']
+    sex = request.form['sex']
+    birthdate = request.form['birthdate']
+    colours = request.form['colours']
+    
+    child = Child(username, password, departamento, 
+                  distrito, sex, birthdate, colours)
+    
+    db.session.add(child)
+    db.session.commit()
+    
+    return redirect(url_for('child.play'))  
 
 
 @child.route('/userchild/<username>', methods=['GET', 'POST'])
@@ -85,3 +99,9 @@ def passwords():
         return jsonify(passwords=data)
 
     return jsonify(status=400, mensaje='Error no es ajax')
+
+
+@child.route('/play', methods=['GET'])
+def play():
+    return render_template('child/play.html')
+

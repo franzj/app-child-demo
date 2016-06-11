@@ -9,7 +9,7 @@ function onchage_Imgs(index){
                 var imgLoad = "\
                 <div class='item'>\
                     <label>\
-                    <input type='radio' name='password' value='" + i.src + "'>\
+                    <input type='radio' name='password' value='" + i.src + "' required='true'>\
                     <img src='" + i.src + "' alt='" + i.id + "' style='height: 100px; width: 120px'>\
                     </label>\
                 </div>";

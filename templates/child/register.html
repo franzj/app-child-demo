@@ -20,8 +20,7 @@
     <form class="form" action="/register" method="POST">
       <div class="fromgroup">
         <label>Digita tu nombre </label>
-        {{ form.csrf_token }}
-        <input id="txtUsername" type="text" name="username" value="" autocomplete="off">
+        <input id="txtUsername" type="text" name="username" value="" autocomplete="off" required="true">
         <input id="btnVerificar" type="button" value="Ver Disponibilidad">
       </div>
       <div class="fromgroup">

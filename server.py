@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, send_from_directory
-from flask_wtf.csrf import CsrfProtect
 
 from app.app import child
 from admin.admin import admin
@@ -30,3 +29,4 @@ def uploaded_file(filename):
 if __name__ == "__main__":
     init_database()
     serve.run(debug=True)
+

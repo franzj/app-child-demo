@@ -2,6 +2,7 @@
 from models import db, Password, Img, UserAdmin, Child
 
 import json
+import datetime
 
 def init_db():
     """ Funcion que crea las tablas en la base de datos si no existe
@@ -30,7 +31,22 @@ def init_db():
 
         # Optenemos todos los usuario niños y las insertamos en la base de datos
         for child in data['userchild']:
-            db.session.add(Child(child['username'], child['password']))
+            date = child['birthdate'].split("/")
+            
+            username = child['username']
+            password = child['password']
+            departamento = child['departamento']
+            provincia = child['provincia']
+            sex = child['sex']
+            birthdate = datetime.date(
+                    year=int(date[2]),
+                    month=int(date[1]),
+                    day=int(date[0])
+                )
+            colours = ','.join(child['colours'])
+            db.session.add(Child(username, password, departamento,
+                provincia, sex, birthdate, colours))
+            
         db.session.commit()
 
         # Agregamos usuarios administrador

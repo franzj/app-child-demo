@@ -4,12 +4,60 @@
             {"username": "admin", "password": "secret"}
         ],
         "userchild": [
-            {"username": "juanito", "password": "perrito1.jpg"},
-            {"username": "gisela", "password": "munieca1.jpg"},
-            {"username": "marco", "password": "perrito2.jpg"},
-            {"username": "antonio", "password": "gatito3.jpg"},
-            {"username": "jorgito", "password": "perrito1.jpg"},
-            {"username": "elvis", "password": "perrito4.jpg"}
+            {
+                "username": "juanito",
+                "password": "perrito1.jpg",
+                "departamento": "Apurímac",
+                "provincia": "Abancay",
+                "sex": "m",
+                "birthdate": "05/05/2008",
+                "colours": ["rojo", "verde"]
+            },
+            {
+                "username": "gisela",
+                "password": "munieca1.jpg",
+                "departamento": "Arequipa",
+                "provincia": "Arequipa",
+                "sex": "f",
+                "birthdate": "10/12/2007",
+                "colours": ["amarillo", "rojo"]
+            },
+            {
+                "username": "marco",
+                "password": "perrito2.jpg",
+                "departamento": "Cusco",
+                "provincia": "Cusco",
+                "sex": "m",
+                "birthdate": "05/05/2008",
+                "colours": ["rojo", "azul"]
+            },
+            {
+                "username": "antonio",
+                "password": "gatito3.jpg",
+                "departamento": "Apurímac",
+                "provincia": "Abancay",
+                "sex": "m",
+                "birthdate": "05/06/2008",
+                "colours": ["rojo", "verde"]
+            },
+            {
+                "username": "jorgito",
+                "password": "perrito1.jpg",
+                "departamento": "Apurímac",
+                "provincia": "Abancay",
+                "sex": "m",
+                "birthdate": "13/07/2008",
+                "colours": ["rojo", "verde"]
+            },
+            {
+                "username": "elvis",
+                "password": "perrito4.jpg",
+                "departamento": "Apurímac",
+                "provincia": "Abancay",
+                "sex": "m",
+                "birthdate": "28/09/2008",
+                "colours": ["rojo", "verde"]
+            }
         ],
         "password": [
             "gatitos",
