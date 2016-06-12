@@ -45,7 +45,7 @@ def cuntinue_register():
     colours = request.form['colours']
     
     child = Child(username, password, departamento, 
-                  distrito, sex, birthdate, colours)
+                  provincia, sex, birthdate, colours)
     
     db.session.add(child)
     db.session.commit()
