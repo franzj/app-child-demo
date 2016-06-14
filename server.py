@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-from flask import Flask, send_from_directory
+from flask import Flask, send_from_directory, g, session
 
 from app.app import child
 from admin.admin import admin
-from models import serve
+from models import serve, User
 
 import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -17,9 +17,16 @@ serve.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 serve.register_blueprint(child)
 serve.register_blueprint(admin)
 
+
 def init_database():
     from utils import init_db
     init_db()
+
+@serve.before_request
+def before_request():
+    g.user = None
+    if 'user_id' in session:
+        g.user = User.query.filter_by(username=session['user_id']).first()
 
 @serve.route('/media/<filename>')
 def uploaded_file(filename):

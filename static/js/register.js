@@ -10,7 +10,7 @@ function onchage_Imgs(index){
                 <div class='item'>\
                     <label>\
                     <input type='radio' name='password' value='" + i.src + "' required='true'>\
-                    <img src='" + i.src + "' alt='" + i.id + "' style='height: 100px; width: 120px'>\
+                    <img src='/media/" + i.src + "' alt='" + i.id + "' style='height: 100px; width: 120px'>\
                     </label>\
                 </div>";
 

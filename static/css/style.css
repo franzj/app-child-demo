@@ -47,6 +47,13 @@ nav li:hover{
     background: rgb(2, 21, 136);
 }
 
+canvas {
+    width: 80%;
+    background: red;
+    float: left;
+    margin: 0 32px;
+}
+
 #content {
     background: white;
     margin: auto;
@@ -57,8 +64,14 @@ nav li:hover{
     box-shadow: 0px 3px 8px 2px black;
 }
 
-#controls {
-    padding-left: 70%;
+#controls input {
+    float: right;
+    margin: 5px;
+}
+
+#imgitems {
+    background: grey;
+    border-radius: 5px;
 }
 
 .form {
@@ -69,7 +82,8 @@ nav li:hover{
 .fromgroup {
     display: inline-block;
     padding: 16px 32px;
-    width: 100%;
+    width: 896px;
+    margin-left: 32px;
 }
 
 .item {
@@ -94,3 +108,4 @@ nav li:hover{
     border-radius: 50%;
     border: 1px solid black;
 }
+

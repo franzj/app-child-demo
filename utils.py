@@ -1,8 +1,34 @@
 # -*- coding: utf-8 -*-
-from models import db, Password, Img, UserAdmin, Child
+from flask import request, g, abort
+from models import db, Password, Img, User, Child
+from functools import wraps
 
 import json
 import datetime
+
+def login_required(func):
+    @wraps(func)
+    def decorated_view(*args, **kwargs):
+        if g.user:
+            abort(401)
+        return func(*args, **kwargs)
+    return decorated_view
+
+def admin_only(func):
+    @wraps(func)
+    def decorated_view(*args, **kwargs):
+        if g.user.is_admin:
+            return func(*args, **kwargs)
+        abort(401)
+    return decorated_view
+
+def is_ajax():
+    try:
+        if request.headers['X-Requested-With'] == 'XMLHttpRequest':
+            return True
+        return False
+    except KeyError:
+        False
 
 def init_db():
     """ Funcion que crea las tablas en la base de datos si no existe
@@ -31,25 +57,34 @@ def init_db():
 
         # Optenemos todos los usuario niños y las insertamos en la base de datos
         for child in data['userchild']:
-            date = child['birthdate'].split("/")
-            
             username = child['username']
             password = child['password']
+            
+            user = User(username, password, False)
+            
+            date = child['birthdate'].split("/")
+            
+            birthdate = datetime.date(
+                year=int(date[2]),
+                month=int(date[1]),
+                day=int(date[0])
+            )
+            
             departamento = child['departamento']
             provincia = child['provincia']
             sex = child['sex']
-            birthdate = datetime.date(
-                    year=int(date[2]),
-                    month=int(date[1]),
-                    day=int(date[0])
-                )
             colours = ','.join(child['colours'])
-            db.session.add(Child(username, password, departamento,
-                provincia, sex, birthdate, colours))
+            ingresos = child['ingresos']
             
+            db.session.add(
+                Child(user, departamento, provincia,
+                      sex, birthdate, colours, ingresos)
+            )
+
         db.session.commit()
 
         # Agregamos usuarios administrador
         for admin in data['useradmin']:
-            db.session.add(UserAdmin(admin['username'], admin['password']))
+            db.session.add(User(admin['username'], admin['password'], True))
         db.session.commit()
+
