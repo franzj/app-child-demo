@@ -10,8 +10,8 @@ def login_required(func):
     @wraps(func)
     def decorated_view(*args, **kwargs):
         if g.user:
-            abort(401)
-        return func(*args, **kwargs)
+            return func(*args, **kwargs)
+        abort(401)
     return decorated_view
 
 def admin_only(func):
