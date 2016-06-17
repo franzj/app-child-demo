@@ -1,1 +1,18 @@
 {% extends "layout.html" %}
+{% block title %}Página de registro{% endblock %}
+{% block statics %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" charset="utf-8">
+{% endblock %}
+{% block content %}
+  <div id="content">
+    <nav>
+      <ul>
+        <li class="navselected"><a href="/">Inicio</a></li>
+        <li><a href="/play">Jugar</a></li>
+        <li><a href="/register">Registrarse</a></li>
+        <li style="float: right;"><a href="/login">Iniciar Sesión</a></li>
+      </ul>
+    </nav>
+    
+  </div>
+{% endblock %}

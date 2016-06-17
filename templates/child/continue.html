@@ -9,10 +9,10 @@
   <div id="content">
     <nav>
       <ul>
-        <li>Inicio</li>
-        <li>Inicio</li>
-        <li>Otro</li>
-        <li style="float: right;">Login</li>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/play">Jugar</a></li>
+        <li class="navselected"><a href="/register">Registrarse</a></li>
+        <li style="float: right;"><a href="/login">Iniciar Sesión</a></li>
       </ul>
     </nav>
     <h1>Bienvenido a mi primer jueguito en HTML5</h1>
@@ -21,16 +21,16 @@
       <input hidden="true" type="text" name="username" value="{{ data.username }}" />
       <input hidden="true" type="password" name="password" value="{{ data.password }}" />
       <div class="fromgroup">
-        <label>Departamento y distrito</label>
+        <label><b>Departamento y distrito</b></label>
         <select id="departamentos" name="departamento" required="true">
         </select>
         <select id="provincias" name="provincia" required="true">
         </select>
       </div>
       <div class="fromgroup">
-        <div class="item">
-          <label>Sexo</label>
-          <div class="fromgroup">
+        <div class="item margenderecho">
+          <label><b>Sexo</b></label>
+          <div>
               <div class="item">
                 <label>
                   <input type="radio" name="sex" value="f" required="true">
@@ -45,14 +45,14 @@
               </div>
           </div>
         </div>
-        <div class="item">
-          <label>Fecha de nacimiento</label>
+        <div class="item margenderecho">
+          <label><b>Fecha de nacimiento</b></label>
           <div>
             <input id="dateFecha" type="date" name="birthdate" value="" required="true">
           </div>
         </div>
         <div class="item">
-          <label>Mis colores favoritos</label>
+          <label><b>Mis colores favoritos</b></label>
           <div>
             <div class="checkbox">
               <label>

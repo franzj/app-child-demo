@@ -5,12 +5,17 @@
 
 h1, h2 {
     text-align: center;
-    color: white;
-    text-shadow: 1px 1px 2px black;
+    color: #4CAF50;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.50);
 }
 
 h2 {
-    color: blue;
+    color: #3F51B5;
+}
+
+a{
+    color: white;
+    text-decoration: none;
 }
 
 input {
@@ -24,9 +29,9 @@ img {
 nav {
     display: inline-block;
     width: 100%;
-    background: rgb(41, 77, 186);
+    background: #03A9F4;
     margin: 0 0 16px 0;
-    box-shadow: 0px 2px 8px black;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 nav ul {
@@ -36,7 +41,7 @@ nav ul {
 nav li {
     color: white;
     cursor: pointer;
-    width: 80px;
+    width: 96px;
     display: inline-block;
     float: left;
     padding: 16px;
@@ -44,24 +49,22 @@ nav li {
 }
 
 nav li:hover{
-    background: rgb(2, 21, 136);
+    background: #2196F3;
 }
 
 canvas {
-    width: 80%;
-    background: red;
-    float: left;
-    margin: 0 32px;
+    background: #FFC107;
+    margin: auto;
 }
 
 #content {
     background: white;
     margin: auto;
     width: 1024px;
-    height: 100%;
-
+    height: 624px;
+    box-shadow: 0px 3px 8px 2px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.3);
     border-top: none;
-    box-shadow: 0px 3px 8px 2px black;
 }
 
 #controls input {
@@ -70,8 +73,18 @@ canvas {
 }
 
 #imgitems {
-    background: grey;
     border-radius: 5px;
+    width: 768px;
+    margin: auto 10%;
+}
+
+#imgitems img {
+    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.4);
+}
+
+#resultados{
+    float:left;
+    margin: 32px 32px; 
 }
 
 .form {
@@ -81,16 +94,25 @@ canvas {
 
 .fromgroup {
     display: inline-block;
-    padding: 16px 32px;
+    padding: 10px 32px;
     width: 896px;
     margin-left: 32px;
+}
+
+.fromgroup section{
+    float:left;
 }
 
 .item {
     display: block;
     float: left;
-    margin-left: 7%;
+    margin-top: 32px;
+    margin-left: 12px;
     text-align: center;
+}
+
+.item:last-child {
+    margin-bottom: 32px; 
 }
 
 .item div{
@@ -107,5 +129,77 @@ canvas {
     width: 50px;
     border-radius: 50%;
     border: 1px solid black;
+}
+
+.margenderecho {
+    margin-right: 92px;
+}
+
+.navselected {
+    background: #2196F3;
+}
+
+.movimientos {
+    display: block;
+    margin: 0 0 0 16px;
+}
+
+.movimientos input {
+    display: block;
+    margin: 8px auto;
+}
+
+.movimientos button {
+    display: block;
+    margin: 8px auto;
+}
+
+.play {
+    margin-left: 8px;
+    width: 736px;
+    text-align: center;
+    padding: 16px;
+    background: #FF5722;
+}
+
+.opciones{
+    width: 240px;
+    height: 184px;
+}
+
+.opcion{
+    color: white;
+    background: #CDDC39;
+    margin: 16px;
+    padding: 8px;
+    cursor: pointer;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.45);
+}
+
+.opcion:hover{
+    background: #4CAF50;
+}
+
+.opciones, .data{
+    float: left;
+}
+
+.estadistica{
+    margin: 32px 64px;
+    border: solid 1px rgba(0,0,0,0.30);
+}
+
+.estadistica td,th {
+    padding: 6px;
+    text-align: center;
+}
+
+.data {
+    display: inline-flex;
+}
+
+.center{
+    text-align: center;
+    padding: 0;
 }
 

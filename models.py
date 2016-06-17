@@ -2,7 +2,12 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+UPLOAD_FOLDER = os.path.join(BASE_DIR, 'media')
+
 serve = Flask(__name__)
+serve.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 serve.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sqlite.db'
 db = SQLAlchemy(serve)
 

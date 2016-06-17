@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from flask import (Blueprint, render_template, abort, request,
-    redirect, url_for, jsonify, session, flash)
+    redirect, url_for, jsonify, session, flash, g)
 from sqlalchemy.orm.exc import NoResultFound
 
 from models import db, User, Child, Password, Img
@@ -66,7 +66,7 @@ def cuntinue_register():
     db.session.add(child)
     db.session.commit()
     
-    session['user_id'] = user.id
+    session['user_id'] = user.username
     
     return redirect(url_for('child.play'))
 

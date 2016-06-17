@@ -2,35 +2,66 @@
 {% block title %}Página de registro{% endblock %}
 {% block statics %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" charset="utf-8">
+<script src="{{ url_for('static', filename='js/play.js') }}" charset="utf-8"></script>
 {% endblock %}
 {% block content %}
   <div id="content">
     <nav>
       <ul>
-        <li>Inicio</li>
-        <li>Inicio</li>
-        <li>Otro</li>
-        <li style="float: right;">Login</li>
+        <li><a href="/">Inicio</a></li>
+        <li class="navselected"><a href="/play">Jugar</a></li>
+        <li><a href="/register">Registrarse</a></li>
+        <li style="float: right;"><a href="/login">Iniciar Sesión</a></li>
       </ul>
     </nav>
     <h1>Bienvenido a mi primer jueguito en HTML5</h1>
     <h2>Este es el formulario de registro para niños Apurimeños</h2>
     <div class="form">
       <div class="fromgroup">
-        <canvas>
-          Su navegar no soporta canvas
-        </canvas>
-        <section class="">
-          <input type="button" >
-          <input type="button" >
-          <input type="button" >
+        <section>
+            <ul hidden="true">
+                <li>juanito</li>
+                <li>juanito</li>
+                <li>juanito</li>
+            </ul>
+        </section>
+        <section class="play">
+            <canvas id="canvas" width="736" height="368">
+              Su navegar no soporta canvas
+            </canvas>
+        </section>
+        <section>
+            <div class="movimientos">
+              <label>
+                <input type="radio" name="pelota" value="1">
+                <img src="/static/imgs/pelota1.png" alt="pelota 1" style="height: 32px; width: 32px">
+              </label>
+              <label>
+                <input type="radio" name="pelota" value="2">
+                <img src="/static/imgs/pelota2.png" alt="pelota 2" style="height: 32px; width: 32px">
+              </label>
+              <label>
+                <input type="radio" name="pelota" value="3">
+                <img src="/static/imgs/pelota3.png" alt="pelota 3" style="height: 32px; width: 32px">
+              </label>
+              <label>
+                <input type="radio" name="pelota" value="4">
+                <img src="/static/imgs/pelota4.png" alt="pelota 4" style="height: 32px; width: 32px">
+              </label>
+            </div>
+            <hr>
+            <div class="movimientos">
+              <button id="idayvuelta">IyV.</button>
+              <button id="cuadrilatero">Cuad.</button>
+              <button id="triangulo">Tri</button>
+            </div>
         </section>
       </div>
-      <div class="fromgroup">
-        <input type="button" >
-        <input type="button" >
-        <input type="button" >
-        <input type="button" >
+      <div class="fromgroup center">
+        <button id="izquierda">Izquierda</button>
+        <button id="arriva">Arriba</button>
+        <button id="abajo">Abajo</button>
+        <button id="derecha">Derecha</button>
       </div>
     </div>
   </div>

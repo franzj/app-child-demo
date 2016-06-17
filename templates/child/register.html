@@ -9,22 +9,22 @@
   <div id="content">
     <nav>
       <ul>
-        <li>Inicio</li>
-        <li>Inicio</li>
-        <li>Otro</li>
-        <li style="float: right;">Login</li>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/play">Jugara</a></li>
+        <li class="navselected"><a href="/register">Registrarse</a></li>
+        <li style="float: right;"><a href="/login">Iniciar Sesión</a></li>
       </ul>
     </nav>
     <h1>Bienvenido a mi primer jueguito en HTML5</h1>
     <h2>Este es el formulario de registro para niños Apurimeños</h2>
     <form class="form" action="/register" method="POST">
       <div class="fromgroup">
-        <label>Digita tu nombre </label>
+        <label><b>Digita tu nombre</b></label>
         <input id="txtUsername" type="text" name="username" value="" autocomplete="off" required="true">
         <input id="btnVerificar" type="button" value="Ver Disponibilidad">
       </div>
       <div class="fromgroup">
-        <label>Escoge una contraseña </label>
+        <label><b>Escoge una contraseña</b></label>
         <select id="ddlPasswords">
         </select>
       </div>
